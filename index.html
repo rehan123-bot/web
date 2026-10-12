@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Putra & Jesicca
+     | Undangan Pernikahan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #f8f2e8;
+      --cream-dark: #eee2cf;
+      --brown: #765b43;
+      --brown-dark: #49382c;
+      --gold: #b99762;
+      --white: #fffdf9;
+      --text: #51463d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       COVER
+    ========================= */
+
+    .cover {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          rgba(45, 34, 25, .38),
+          rgba(45, 34, 25, .50)
+        ),
+        url("foto/foto1.jpg") center/cover no-repeat;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(255,255,255,.55);
+      pointer-events: none;
+    }
+
+    .cover-content {
+      color: white;
+      position: relative;
+      z-index: 2;
+      padding: 25px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .small-title {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .cover h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(65px, 12vw, 120px);
+      line-height: .85;
+      font-weight: 500;
+    }
+
+    .cover h1 span {
+      display: block;
+      font-size: .48em;
+      margin: 18px 0;
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+      letter-spacing: 4px;
+    }
+
+    .cover-date {
+      margin-top: 25px;
+      letter-spacing: 3px;
+      font-size: 14px;
+    }
+
+    .open-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 13px 28px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: .3s;
+      background: rgba(255,255,255,.08);
+    }
+
+    .open-button:hover {
+      background: white;
+      color: var(--brown-dark);
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      width: min(100%, 1000px);
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+
+    .section-title h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      color: var(--brown-dark);
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      max-width: 600px;
+      margin: 12px auto 0;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       QUOTE
+    ========================= */
+
+    .quote {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .quote-text {
+      max-width: 700px;
+      margin: auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1.5;
+      color: var(--brown-dark);
+    }
+
+    .quote-source {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    /* =========================
+       COUPLE
+    ========================= */
+
+    .couple {
+      background: var(--cream);
+    }
+
+    .couple-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .person {
+      text-align: center;
+    }
+
+    .person-photo {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 110px 110px 20px 20px;
+      display: block;
+      margin: auto;
+      box-shadow: 0 15px 35px rgba(80,60,40,.18);
+    }
+
+    .person h3 {
+      margin-top: 25px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      color: var(--brown-dark);
+    }
+
+    .person p {
+      margin-top: 5px;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .and {
+      width: 60px;
+      height: 60px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      color: var(--gold);
+    }
+
+    /* =========================
+       EVENT
+    ========================= */
+
+    .event {
+      background: var(--white);
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .event-card {
+      text-align: center;
+      padding: 40px 25px;
+      border: 1px solid var(--cream-dark);
+      background: #fff;
+    }
+
+    .event-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .event-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      color: var(--brown-dark);
+    }
+
+    .event-card p {
+      margin-top: 12px;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    .countdown {
+      background: var(--brown-dark);
+      color: white;
+      text-align: center;
+    }
+
+    .countdown h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 45px;
+      font-weight: 500;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      min-width: 85px;
+      padding: 18px 12px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.05);
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .time-box span {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: .7;
+    }
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery {
+      background: var(--cream);
+    }
+
+    .gallery-grid {
+      columns: 2;
+      column-gap: 15px;
+    }
+
+    .gallery-item {
+      width: 100%;
+      margin-bottom: 15px;
+      display: block;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: .4s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(.98);
+      opacity: .9;
+    }
+
+    /* =========================
+       MAP / LOCATION
+    ========================= */
+
+    .location {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .location p {
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 25px;
+      background: var(--brown);
+      color: white;
+      padding: 13px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .map-button:hover {
+      background: var(--brown-dark);
+    }
+
+    /* =========================
+       RSVP
+    ========================= */
+
+    .rsvp {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .rsvp p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    .wa-button {
+      display: inline-block;
+      margin-top: 25px;
+      background: #25D366;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: var(--brown-dark);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    footer h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 45px;
+      font-weight: 500;
+    }
+
+    footer p {
+      margin-top: 10px;
+      opacity: .7;
+      font-size: 13px;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 650px) {
+
+      section {
+        padding: 70px 18px;
+      }
+
+      .couple-wrapper {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .and {
+        margin-top: -10px;
+        margin-bottom: -10px;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .person-photo {
+        width: 190px;
+        height: 245px;
+      }
+
+      .section-title h2 {
+        font-size: 40px;
+      }
+
+      .gallery-grid {
+        columns: 2;
+        column-gap: 10px;
+      }
+
+      .gallery-item {
+        margin-bottom: 10px;
+      }
+
+      .cover h1 {
+        font-size: 72px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       COVER
+  ========================== -->
+
+  <section class="cover">
+
+    <div class="cover-content">
+
+      <div class="small-title">
+        The Wedding Of
+      </div>
+
+      <h1>
+        Putra
+        <span>&</span>
+        Jesicca
+      </h1>
+
+      <div class="cover-date">
+        10 • 10 • 2026
+      </div>
+
+      <a href="#undangan" class="open-button">
+        Buka Undangan
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PEMBUKAAN
+  ========================== -->
+
+  <section class="quote" id="undangan">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>Assalamu'alaikum Warahmatullahi Wabarakatuh</small>
+        <h2>Dengan Bahagia</h2>
+      </div>
+
+      <p class="quote-text">
+        "Dan di antara tanda-tanda kekuasaan-Nya ialah
+        Dia menciptakan untukmu pasangan dari jenismu sendiri,
+        supaya kamu cenderung dan merasa tenteram kepadanya."
+      </p>
+
+      <p class="quote-source">
+        QS. Ar-Rum : 21
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MEMPELAI
+  ========================== -->
+
+  <section class="couple">
+
+    <div class="container">
+
+      <div class="section-title">
+        <small>We Are Getting Married</small>
+        <h2>Mempelai</h2>
+      </div>
+
+      <div class="couple-wrapper">
+
+        <div class="person">
+
+          <img
+            src="foto2.jpg"
+            alt="Putra"
+            class="person-photo"
+          >
+
+          <h3>Putra</h3>
+
+          <p>
+            Putra nurdiansyah<br>
+            Putra dari Bapak kiwil<br>
+            & Ibu airin
+          </p>
+
+        </div>
+
+        <div class="and">
+          &
+        </div>
+
+        <div class="person">
+
+          <img
+            src="foto1.jpg"
+            alt="Jesicca"
+            class="person-photo"
+          >
+
+          <h3>Jesicca</h3>
+
+          <p>
+            Jesicca sulaiman<br>
+            Putri dari Bapak raffi<br>
+            & Ibu dinda
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ACARA
+  ========================== -->
+
+  <section class="event">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small>Save The Date</small>
+
+        <h2>Detail Acara</h2>
+
+        <p>
+          Dengan penuh kebahagiaan kami mengundang
+          Bapak/Ibu/Saudara/i untuk hadir dan memberikan
+          doa restu pada hari bahagia kami.
+        </p>
+
+      </div>
+
+
+      <div class="event-grid">
+
+        <div class="event-card">
+
+          <div class="event-icon">💍</div>
+
+          <h3>Akad Nikah</h3>
+
+          <p>
+            Sabtu, 10 Oktober 2026<br>
+            08.00 WIB – selesai
+          </p>
+
+          <p>
+            Hotel rangkasbitung<br>
+            Jl. rangkas NO. 23
+          </p>
+
+        </div>
+
+
+        <div class="event-card">
+
+          <div class="event-icon">🥂</div>
+
+          <h3>Resepsi</h3>
+
+          <p>
+            Sabtu, 10 Oktober 2026<br>
+            11.00 WIB – 14.00 WIB
+          </p>
+
+          <p>
+            Sekolah mhi<br>
+            Jl. pandeglang No. 123
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       COUNTDOWN
+  ========================== -->
+
+  <section class="countdown">
+
+    <div class="container">
+
+      <h2>Menuju Hari Bahagia</h2>
+
+      <div class="timer">
+
+        <div class="time-box">
+          <strong id="days">00</strong>
+          <span>Hari</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="hours">00</strong>
+          <span>Jam</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="minutes">00</strong>
+          <span>Menit</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="seconds">00</strong>
+          <span>Detik</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       GALERI
+  ========================== -->
+
+  <section class="gallery">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small>Our Memories</small>
+
+        <h2>Galeri Foto</h2>
+
+        <p>
+          Beberapa momen yang menjadi bagian
+          dari perjalanan kisah Putra & Jesicca.
+        </p>
+
+      </div>
+
+
+      <div class="gallery-grid">
+
+        <img
+          src="foto1.jpg"
+          alt="Foto Putra dan Jesicca"
+          class="gallery-item"
+        >
+
+        <img
+          src="foto2.jpg"
+          alt="Foto Putra"
+          class="gallery-item"
+        >
+
+        <img
+          src="foto1.jpg"
+          alt="Foto Jesicca"
+          class="gallery-item"
+        >
+
+        <img
+          src="foto2.jpg"
+          alt="Foto Putra dan Jesicca"
+          class="gallery-item"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LOKASI
+  ========================== -->
+
+  <section class="location">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small>Where & When</small>
+
+        <h2>Lokasi Acara</h2>
+
+      </div>
+
+      <p>
+        Hotel bintang 5<br>
+        Jl. cibubur No. 03, <br>
+        Jawa Barat, Indonesia
+      </p>
+
+      <a
+        href="https://maps.google.com/"
+        target="_blank"
+        class="map-button"
+      >
+        📍 Buka Google Maps
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       RSVP
+  ========================== -->
+
+  <section class="rsvp">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small>Konfirmasi Kehadiran</small>
+
+        <h2>RSVP</h2>
+
+      </div>
+
+      <p>
+        Merupakan suatu kehormatan bagi kami apabila
+        Bapak/Ibu/Saudara/i berkenan hadir dan memberikan
+        doa restu untuk pernikahan kami.
+      </p>
+
+      <a
+        href="https://wa.me/6281234567890?text=Halo%20Putra%20dan%20Hayani,%20saya%20akan%20hadir%20di%20acara%20pernikahan."
+        target="_blank"
+        class="wa-button"
+      >
+        💬 Konfirmasi via WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <h2>Putra & Jesicca</h2>
+
+    <p>
+      Terima kasih atas doa dan restu yang diberikan.
+    </p>
+
+    <p>
+      © 2026 Putra & Jesicca
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT COUNTDOWN
+  ========================== -->
+
+  <script>
+
+    // Ubah tanggal di bawah sesuai tanggal pernikahan
+    const weddingDate = new Date("October 10, 2026 08:00:00").getTime();
+
+    const countdown = setInterval(function () {
+
+      const now = new Date().getTime();
+
+      const distance = weddingDate - now;
+
+      const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+      );
+
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+      );
+
+      const seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+      );
+
+      document.getElementById("days").innerText =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").innerText =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, "0");
+
+
+      if (distance < 0) {
+
+        clearInterval(countdown);
+
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+
+      }
+
+    }, 1000);
+
+  </script>
+
+</body>
+</html>
